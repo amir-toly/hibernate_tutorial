@@ -16,9 +16,9 @@ public class EventManager {
             mgr.createAndStoreEvent("My Event", new Date());
         }
         else if (args[0].equals("list")) {
-            List events = mgr.listEvents();
+            List<Event> events = mgr.listEvents();
             for (int i = 0; i < events.size(); i++) {
-                Event theEvent = (Event) events.get(i);
+                Event theEvent = events.get(i);
                 System.out.println(
                         "Event: " + theEvent.getTitle() + " Time: " + theEvent.getDate()
                 );
@@ -40,10 +40,10 @@ public class EventManager {
         session.getTransaction().commit();
     }
     
-    private List listEvents() {
+    private List<Event> listEvents() {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        List result = session.createQuery("from Event").list();
+        List<Event> result = session.createQuery("from Event").list();
         session.getTransaction().commit();
         return result;
     }
