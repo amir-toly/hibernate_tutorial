@@ -7,3 +7,5 @@ Steps:
 	mvn compile
 - Store your first Event by running
 	mvn exec:java -Dexec.mainClass="org.hibernate.tutorial.EventManager" -Dexec.args="store"
+- List existing events by running
+	mvn exec:java -Dexec.mainClass="org.hibernate.tutorial.EventManager" -Dexec.args="list"
