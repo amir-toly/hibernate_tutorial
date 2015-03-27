@@ -3,6 +3,7 @@ package org.hibernate.tutorial.util;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
 
 public class HibernateUtil {
 
@@ -13,8 +14,12 @@ public class HibernateUtil {
     	
         try {
             // Create the SessionFactory from hibernate.cfg.xml
-            sessionFactory = new Configuration().configure().buildSessionFactory(
-			    new StandardServiceRegistryBuilder().build() );
+            Configuration configuration = new Configuration();
+            configuration.configure();
+
+            ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(
+                    configuration.getProperties()).build();
+            sessionFactory = configuration.buildSessionFactory(serviceRegistry);
         }
         catch (Throwable ex) {
             // Make sure you log the exception, as it might be swallowed
