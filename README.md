@@ -9,3 +9,5 @@ Steps:
 	mvn exec:java -Dexec.mainClass="org.hibernate.tutorial.EventManager" -Dexec.args="store"
 - List existing events by running
 	mvn exec:java -Dexec.mainClass="org.hibernate.tutorial.EventManager" -Dexec.args="list"
+- Create an event and a person, then bind them together by running
+	mvn exec:java -Dexec.mainClass="org.hibernate.tutorial.EventManager" -Dexec.args="addpersontoevent"
