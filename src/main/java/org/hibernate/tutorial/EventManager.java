@@ -93,7 +93,6 @@ public class EventManager {
         session.beginTransaction();
 
         Person aPerson = (Person) session.load(Person.class, personId);
-        // adding to the emailAddress collection might trigger a lazy load of the collection
         aPerson.getEmailAddresses().add(emailAddress);
 
         session.getTransaction().commit();
