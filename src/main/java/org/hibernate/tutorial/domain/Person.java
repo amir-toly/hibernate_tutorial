@@ -14,6 +14,16 @@ public class Person {
     private Set<String> emailAddresses = new HashSet<String>();
 
     public Person() {}
+    
+    public void addToEvent(Event event) {
+        this.getEvents().add(event);
+        event.getParticipants().add(this);
+    }
+
+    public void removeFromEvent(Event event) {
+        this.getEvents().remove(event);
+        event.getParticipants().remove(this);
+    }
 
 	public Long getId() {
 		return id;
