@@ -57,11 +57,11 @@ public class Person {
 		this.lastname = lastname;
 	}
 
-	public Set<Event> getEvents() {
+	protected Set<Event> getEvents() {
 		return events;
 	}
 
-	public void setEvents(Set<Event> events) {
+	protected void setEvents(Set<Event> events) {
 		this.events = events;
 	}
 

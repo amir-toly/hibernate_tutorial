@@ -48,11 +48,11 @@ public class Event {
         this.title = title;
     }
 
-    public Set<Person> getParticipants() {
+    protected Set<Person> getParticipants() {
         return participants;
     }
 
-    public void setParticipants(Set<Person> participants) {
+    protected void setParticipants(Set<Person> participants) {
         this.participants = participants;
     }
 }
