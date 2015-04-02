@@ -13,3 +13,5 @@ Steps:
 	mvn exec:java -Dexec.mainClass="org.hibernate.tutorial.EventManager" -Dexec.args="addpersontoevent"
 - Create a person and the corresponding email address by running
 	mvn exec:java -Dexec.mainClass="org.hibernate.tutorial.EventManager" -Dexec.args="addemailaddressforperson"
+- Run (you may have to re-import as a Maven Project and clean before) on Tomcat server and go to
+	http://localhost:8080/hibernate-tutorial/eventmanager
